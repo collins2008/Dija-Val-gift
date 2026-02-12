@@ -1,4 +1,4 @@
-# Dija-Val-gift
+[# Dija-Val-gift
 A simple, responsive Valentine's Day digital letter built with HTML, CSS, and a touch of JavaScript.
 # For Dija ❤️
 
@@ -15,3 +15,4 @@ A simple, responsive Valentine's Day digital letter built with HTML, CSS, and a 
 ├── index.html       # Main website code (Structure, Styles, and Logic)
 ├── photo1.jpg       # First Polaroid image
 └── photo2.jpg       # Second Polaroid image
+](https://collins2008.github.io/Dija-Val-gift/)
