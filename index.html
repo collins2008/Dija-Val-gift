@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>For Dija ❤️</title>
+    <style>
+        :root {
+            --bg: #fffafa;
+            --accent: #e63946;
+            --text: #2b2d42;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Georgia', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Hero Section - Keeps everything visible on one screen */
+        .hero {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 20px;
+        }
+
+        .date-top {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            color: #b5b5b5;
+            margin-bottom: 20px;
+        }
+
+        /* Overlapping Polaroids to save vertical space */
+        .photo-stack {
+            position: relative;
+            width: 280px;
+            height: 320px;
+            margin-bottom: 40px;
+        }
+
+        .polaroid {
+            background: #fff;
+            padding: 8px 8px 30px 8px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            position: absolute;
+            width: 220px;
+            transition: 0.5s ease;
+        }
+
+        .polaroid img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .p1 {
+            transform: rotate(-6deg);
+            left: 0;
+            z-index: 1;
+        }
+
+        .p2 {
+            transform: rotate(4deg);
+            right: 0;
+            top: 20px;
+            z-index: 2;
+        }
+
+        /* Indication that there is more below */
+        .scroll-hint {
+            position: absolute;
+            bottom: 30px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--accent);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+
+        /* The Letter Section */
+        .letter-section {
+            width: 100%;
+            max-width: 400px;
+            padding: 40px 25px;
+        }
+
+        .letter {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 5px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--accent);
+        }
+
+        .signature {
+            margin-top: 30px;
+            font-family: 'Brush Script MT', cursive;
+            font-size: 2.5rem;
+            color: var(--accent);
+            text-align: right;
+        }
+
+        .floating-heart {
+            position: fixed;
+            color: rgba(230, 57, 70, 0.15);
+            z-index: -1;
+            animation: float up 5s linear infinite;
+        }
+
+        @keyframes up {
+            from { transform: translateY(100vh); opacity: 1; }
+            to { transform: translateY(-10vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="date-top">FEBRUARY 14, 2026</div>
+        
+        <div class="photo-stack">
+            <div class="polaroid p1">
+                <img src="photo1.jpg" alt="Dija 1">
+            </div>
+            <div class="polaroid p2">
+                <img src="photo2.jpg" alt="Dija 2">
+            </div>
+        </div>
+
+        <div class="scroll-hint">
+            <p>A note for you</p>
+            <span>▼</span>
+        </div>
+    </section>
+
+    <section class="letter-section">
+        <div class="letter">
+            My Dija,
+            <br><br>
+            I wanted to create something small but special just to show you how much I appreciate you. Sometimes words aren't enough, so I thought I'd build you this little corner of the internet.
+            <br><br>
+            Every time I see these photos, I'm reminded of why you're so important to me. Thank you for being exactly who you are.
+            <br><br>
+            Happy Valentine's Day.
+            
+            <div class="signature">Lampe</div>
+        </div>
+    </section>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.style.position = 'fixed';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.bottom = '-5vh';
+            heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+            heart.innerHTML = '❤️';
+            heart.style.transition = '5s linear';
+            heart.style.opacity = '0.5';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.style.transform = 'translateY(-110vh)';
+                heart.style.opacity = '0';
+            }, 100);
+
+            setTimeout(() => heart.remove(), 5100);
+        }
+        setInterval(createHeart, 400);
+    </script>
+</body>
+</html>
