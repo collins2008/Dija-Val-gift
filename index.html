@@ -1,620 +1,398 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>White Diamonds Academy - Excellence in Education</title>
+    <title>DNT Autos | Premium Car Dealership</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        brand: {
-                            gold: '#c5a059',
-                            dark: '#0f172a', // slate-900
-                        }
-                    },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['Manrope', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-black': '#0f0f0f',
+                        'brand-gray': '#1a1a1a',
+                        'brand-silver': '#e0e0e0',
+                        'brand-accent': '#D93025', // A sporty red accent
                     }
                 }
             }
         }
     </script>
+
     <style>
-        .gold-gradient { background: linear-gradient(to bottom, #c5a059, #d4af37); }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f0f0f;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D93025;
+        }
+
+        /* Animation Utilities */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Overlay */
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.1) 100%);
+        }
+        
+        /* Smooth Hover Effects */
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
     </style>
 </head>
-<body class="bg-white font-sans text-slate-900">
+<body class="bg-brand-black text-brand-silver font-sans antialiased overflow-x-hidden">
 
-    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-brand-dark text-brand-gold flex items-center justify-center rounded-lg">
-                    <i class="fas fa-graduation-cap text-xl"></i>
-                </div>
-                <span class="font-bold text-2xl tracking-tight text-slate-900">White Diamonds</span>
-            </div>
-
-            <div class="hidden md:flex items-center gap-8">
-                <a href="#" class="text-sm font-medium hover:text-brand-gold transition-colors">About</a>
-                <a href="#" class="text-sm font-medium hover:text-brand-gold transition-colors">Admissions</a>
-                <a href="#" class="text-sm font-medium hover:text-brand-gold transition-colors">Contact Us</a>
-                <div class="h-6 w-px bg-gray-300"></div>
-                <a href="#" class="px-4 py-2 bg-brand-dark text-white text-sm font-semibold rounded hover:bg-slate-800 transition-colors">Portal</a>
-            </div>
-        </div>
-    </nav>
-
-    <section class="max-w-7xl mx-auto px-6 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
-        <div class="space-y-8">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-900 bg-slate-900 text-white">
-                <span class="text-xs font-medium uppercase tracking-wider">Admissions Open 2026/2027</span>
-            </div>
-            
-            <h1 class="text-5xl lg:text-7xl font-bold leading-tight">
-                Raising the Bar <br/>
-                <span class="text-brand-dark">in Education</span>
-            </h1>
-            
-            <p class="text-lg text-slate-600 max-w-lg">
-                Experience academic excellence through our British-Nigerian curriculum, state-of-the-art facilities, and dedicated faculty committed to nurturing future leaders.
-            </p>
-
-            <div class="flex flex-wrap gap-4">
-                <button class="px-8 py-4 bg-brand-dark text-white rounded-full font-semibold hover:bg-slate-800 transition flex items-center gap-2">
-                    Apply Now <i class="fas fa-arrow-right text-xs"></i>
-                </button>
-                <button class="px-8 py-4 border-2 border-brand-dark text-brand-dark rounded-full font-semibold hover:bg-gray-50 transition flex items-center gap-2">
-                    <i class="fas fa-play text-xs"></i> Virtual Tour
-                </button>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-3 gap-4 h-[500px] overflow-hidden rounded-2xl relative">
-            <div class="space-y-4 animate-scroll-up">
-                <img src="https://placehold.co/300x400/e2e8f0/0f172a?text=Classroom" class="w-full h-48 object-cover rounded-lg">
-                <img src="https://placehold.co/300x400/c5a059/white?text=Library" class="w-full h-64 object-cover rounded-lg">
-                <img src="https://placehold.co/300x400/0f172a/white?text=Science" class="w-full h-48 object-cover rounded-lg">
-            </div>
-            <div class="space-y-4 pt-12">
-                <img src="https://placehold.co/300x400/0f172a/white?text=Students" class="w-full h-64 object-cover rounded-lg">
-                <img src="https://placehold.co/300x400/e2e8f0/0f172a?text=Sports" class="w-full h-48 object-cover rounded-lg">
-                <img src="https://placehold.co/300x400/c5a059/white?text=Art" class="w-full h-64 object-cover rounded-lg">
-            </div>
-            <div class="space-y-4">
-                <img src="https://placehold.co/300x400/c5a059/white?text=Music" class="w-full h-48 object-cover rounded-lg">
-                <img src="https://placehold.co/300x400/0f172a/white?text=Tech" class="w-full h-64 object-cover rounded-lg">
-                <img src="https://placehold.co/300x400/e2e8f0/0f172a?text=Awards" class="w-full h-48 object-cover rounded-lg">
-            </div>
-        </div>
-    </section>
-
-    <section class="max-w-7xl mx-auto px-6 py-16">
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition">
-                <div class="w-12 h-12 mb-4 text-brand-dark"><i class="fas fa-globe-africa text-3xl"></i></div>
-                <h3 class="text-xl font-bold mb-2">British-Nigerian Curriculum</h3>
-                <p class="text-sm text-slate-600">A global perspective rooted in rich local heritage</p>
-            </div>
-            <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition">
-                <div class="w-12 h-12 mb-4 text-brand-dark"><i class="fas fa-microscope text-3xl"></i></div>
-                <h3 class="text-xl font-bold mb-2">STEM Focused</h3>
-                <p class="text-sm text-slate-600">Igniting curiosity in Science, Tech, Engineering, and Math</p>
-            </div>
-            <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition">
-                <div class="w-12 h-12 mb-4 text-brand-dark"><i class="fas fa-laptop-code text-3xl"></i></div>
-                <h3 class="text-xl font-bold mb-2">Tech-Driven</h3>
-                <p class="text-sm text-slate-600">Shaping the future through coding, robotics, and digital mastery</p>
-            </div>
-            <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition">
-                <div class="w-12 h-12 mb-4 text-brand-dark"><i class="fas fa-certificate text-3xl"></i></div>
-                <h3 class="text-xl font-bold mb-2">WAEC & NECO Accredited</h3>
-                <p class="text-sm text-slate-600">Certified excellence meeting the highest national standards</p>
-            </div>
-            <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition">
-                <div class="w-12 h-12 mb-4 text-brand-dark"><i class="fas fa-building text-3xl"></i></div>
-                <h3 class="text-xl font-bold mb-2">Top Tier Facilities</h3>
-                <p class="text-sm text-slate-600">World-class infrastructure designed to inspire excellence</p>
-            </div>
-            <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition">
-                <div class="w-12 h-12 mb-4 text-brand-dark"><i class="fas fa-shield-alt text-3xl"></i></div>
-                <h3 class="text-xl font-bold mb-2">Safe Environment</h3>
-                <p class="text-sm text-slate-600">A secure, nurturing space where students thrive</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-white py-20">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">Our Stellar Performances</h2>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
-                <div class="text-center">
-                    <div class="w-20 h-20 mx-auto mb-6 rounded-full border border-brand-gold flex items-center justify-center text-brand-dark">
-                        <i class="fas fa-university text-3xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3">98% University Acceptance</h3>
-                    <p class="text-sm text-slate-600">Our students gain admission to top-tier universities worldwide, including Oxford, Harvard, and MIT.</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 mx-auto mb-6 rounded-full border border-brand-gold flex items-center justify-center text-brand-dark">
-                        <i class="fas fa-trophy text-3xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3">National Competition Winners</h3>
-                    <p class="text-sm text-slate-600">Consistent gold medalists in mathematics, science olympiads, and robotics championships.</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 mx-auto mb-6 rounded-full border border-brand-gold flex items-center justify-center text-brand-dark">
-                        <i class="fas fa-star text-3xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3">Outstanding JAMB Scores</h3>
-                    <p class="text-sm text-slate-600">Average score of 320+ with multiple students achieving perfect 400/400 marks annually.</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 mx-auto mb-6 rounded-full border border-brand-gold flex items-center justify-center text-brand-dark">
-                        <i class="fas fa-globe text-3xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3">International Recognition</h3>
-                    <p class="text-sm text-slate-600">Students awarded prestigious scholarships from institutions across Europe, Asia, and America.</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 mx-auto mb-6 rounded-full border border-brand-gold flex items-center justify-center text-brand-dark">
-                        <i class="fas fa-medal text-3xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3">Academic Excellence Awards</h3>
-                    <p class="text-sm text-slate-600">Multiple distinctions in WAEC and NECO examinations with A1 grades across all subjects.</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 mx-auto mb-6 rounded-full border border-brand-gold flex items-center justify-center text-brand-dark">
-                        <i class="fas fa-user-tie text-3xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3">Leadership Development</h3>
-                    <p class="text-sm text-slate-600">Alumni leading Fortune 500 companies, startups, and making impact in global organizations.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-gray-50 py-24">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">Student Hall of Fame</h2>
-                <p class="text-xl text-slate-600">Celebrating Excellence in JAMB UTME 2024</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-2xl shadow-sm overflow-hidden flex flex-col">
-                    <div class="p-8 flex-grow">
-                        <h3 class="text-2xl font-bold text-center text-brand-gold mb-6">Adaeze Okonkwo</h3>
-                        <div class="border-y border-gray-100 py-6 mb-6 text-center">
-                            <p class="text-xs text-slate-500 uppercase tracking-wide mb-2">Total Score</p>
-                            <p class="text-6xl font-bold text-slate-900">362</p>
-                            <p class="text-xs text-slate-400 mt-2">out of 400</p>
-                        </div>
-                        <div class="bg-gray-100 rounded-lg p-1 grid grid-cols-2 gap-px">
-                            <div class="bg-white p-3 text-center"><p class="text-xs text-gray-500">English</p><p class="text-xl font-bold">88</p></div>
-                            <div class="bg-white p-3 text-center"><p class="text-xs text-gray-500">Mathematics</p><p class="text-xl font-bold">92</p></div>
-                            <div class="bg-white p-3 text-center"><p class="text-xs text-gray-500">Physics</p><p class="text-xl font-bold">94</p></div>
-                            <div class="bg-white p-3 text-center"><p class="text-xs text-gray-500">Chemistry</p><p class="text-xl font-bold">88</p></div>
-                        </div>
-                    </div>
-                    <div class="h-56 bg-gray-200">
-                        <img src="https://placehold.co/400x400/f1f5f9/94a3b8?text=Adaeze" class="w-full h-full object-cover">
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-2xl shadow-lg transform scale-105 border border-brand-gold overflow-hidden flex flex-col z-10">
-                    <div class="p-8 flex-grow">
-                        <h3 class="text-2xl font-bold text-center text-brand-gold mb-6">Ngozi Chioma</h3>
-                        <div class="border-y border-gray-100 py-6 mb-6 text-center">
-                            <p class="text-xs text-slate-500 uppercase tracking-wide mb-2">Total Score</p>
-                            <p class="text-7xl font-bold text-slate-900">375</p>
-                            <p class="text-xs text-slate-400 mt-2">out of 400</p>
-                        </div>
-                        <div class="bg-gray-100 rounded-lg p-1 grid grid-cols-2 gap-px">
-                            <div class="bg-white p-3 text-center"><p class="text-xs text-gray-500">English</p><p class="text-xl font-bold">91</p></div>
-                            <div class="bg-white p-3 text-center"><p class="text-xs text-gray-500">Mathematics</p><p class="text-xl font-bold">97</p></div>
-                            <div class="bg-white p-3 text-center"><p class="text-xs text-gray-500">Biology</p><p class="text-xl font-bold">96</p></div>
-                            <div class="bg-white p-3 text-center"><p class="text-xs text-gray-500">Chemistry</p><p class="text-xl font-bold">91</p></div>
-                        </div>
-                    </div>
-                    <div class="h-56 bg-gray-200">
-                        <img src="https://placehold.co/400x400/c5a059/white?text=Ngozi" class="w-full h-full object-cover">
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-2xl shadow-sm overflow-hidden flex flex-col">
-                    <div class="p-8 flex-grow">
-                        <h3 class="text-2xl font-bold text-center text-brand-gold mb-6">Chukwudi Nnamdi</h3>
-                        <div class="border-y border-gray-100 py-6 mb-6 text-center">
-                            <p class="text-xs text-slate-500 uppercase tracking-wide mb-2">Total Score</p>
-                            <p class="text-6xl font-bold text-slate-900">368</p>
-                            <p class="text-xs text-slate-400 mt-2">out of 400</p>
-                        </div>
-                        <div class="bg-gray-100 rounded-lg p-1 grid grid-cols-2 gap-px">
-                            <div class="bg-white p-3 text-center"><p class="text-xs text-gray-500">English</p><p class="text-xl font-bold">89</p></div>
-                            <div class="bg-white p-3 text-center"><p class="text-xs text-gray-500">Mathematics</p><p class="text-xl font-bold">95</p></div>
-                            <div class="bg-white p-3 text-center"><p class="text-xs text-gray-500">Economics</p><p class="text-xl font-bold">93</p></div>
-                            <div class="bg-white p-3 text-center"><p class="text-xs text-gray-500">Government</p><p class="text-xl font-bold">91</p></div>
-                        </div>
-                    </div>
-                    <div class="h-56 bg-gray-200">
-                        <img src="https://placehold.co/400x400/f1f5f9/94a3b8?text=Chukwudi" class="w-full h-full object-cover">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-white pt-24 pb-16">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">Voices of Our Parents</h2>
-                <p class="text-lg text-slate-600">Hear from the families who trust us with their children's future</p>
-            </div>
-            
-            <div class="flex flex-col md:flex-row gap-8 overflow-x-auto pb-8">
-                <div class="min-w-[300px] md:min-w-[500px] p-8 bg-white border border-gray-100 rounded-2xl shadow-sm">
-                    <p class="text-lg italic text-slate-700 mb-6">"White Diamonds Academy has transformed my daughter's approach to learning. The teachers are exceptional and truly care about each child's progress."</p>
-                    <div>
-                        <p class="text-xl font-bold text-brand-gold">Mrs. Folake Adeyemi</p>
-                        <p class="text-sm text-slate-500">Parent, Elementary Division</p>
-                    </div>
-                </div>
-                <div class="min-w-[300px] md:min-w-[500px] p-8 bg-white border border-gray-100 rounded-2xl shadow-sm">
-                    <p class="text-lg italic text-slate-700 mb-6">"The STEM program here is outstanding. My son went from struggling with math to winning a national robotics competition!"</p>
-                    <div>
-                        <p class="text-xl font-bold text-brand-gold">Dr. Chibuike Okafor</p>
-                        <p class="text-sm text-slate-500">Parent, High School Division</p>
-                    </div>
-                </div>
-            </div>
-            <p class="text-center text-sm text-slate-400 mt-4">← Drag or scroll to explore more testimonials →</p>
-        </div>
-    </section>
-
-    <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-12">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">Academic Pathways</h2>
-                <p class="text-lg text-slate-600">Excellence from infancy to university preparation</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8 mb-8">
-                <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition">
-                    <img src="https://placehold.co/600x400/e2e8f0/0f172a?text=Creche" class="w-full h-64 object-cover">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-4">Creche</h3>
-                        <p class="text-slate-600">Warm, safe environment with experienced caregivers focused on early childhood development and sensory exploration.</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition">
-                    <img src="https://placehold.co/600x400/c5a059/white?text=Kindergarten" class="w-full h-64 object-cover">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-4">Kindergarten</h3>
-                        <p class="text-slate-600">Foundation years combining play-based and structured learning to build confidence, curiosity, and social skills.</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition">
-                    <img src="https://placehold.co/600x400/0f172a/white?text=Elementary" class="w-full h-64 object-cover">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-4">Elementary</h3>
-                        <p class="text-slate-600">British-Nigerian curriculum with emphasis on literacy, numeracy, critical thinking, and character development.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition">
-                    <img src="https://placehold.co/600x400/e2e8f0/0f172a?text=High+School" class="w-full h-64 object-cover">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-4">High School</h3>
-                        <p class="text-slate-600">WAEC & NECO accredited program preparing students for university excellence and global opportunities.</p>
-                    </div>
-                </div>
-                <div class="bg-brand-dark text-white rounded-2xl p-8 flex flex-col justify-center">
-                    <div class="inline-block px-4 py-1 border border-brand-gold rounded-full text-brand-gold text-xs font-semibold uppercase tracking-wider mb-6 w-max">All Ages</div>
-                    <div class="mb-6"><i class="fas fa-bed text-5xl text-brand-gold"></i></div>
-                    <h3 class="text-3xl font-bold mb-4">Day & Boarding</h3>
-                    <p class="text-gray-300">Flexible options to suit family needs. Premium boarding facilities with 24/7 supervision, modern amenities, and a nurturing home environment.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-brand-dark py-24 text-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">Virtual Campus Tour</h2>
-                <p class="text-lg text-gray-400">Explore our world-class facilities • Hover to discover</p>
-            </div>
-            
-            <div class="relative w-full h-[600px] bg-slate-800 rounded-3xl overflow-hidden shadow-2xl border border-slate-700">
-                <div class="absolute inset-0 opacity-20 bg-[url('https://placehold.co/1200x800/1e293b/ffffff?text=Map+Grid')] bg-cover bg-center"></div>
-                
-                <div class="absolute top-[20%] left-[20%] group cursor-pointer">
-                    <div class="relative flex items-center justify-center w-8 h-8">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-gold opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-4 w-4 bg-brand-gold"></span>
-                    </div>
-                    <div class="absolute left-8 top-0 bg-white text-slate-900 px-3 py-1 rounded shadow-lg text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Entrance</div>
-                </div>
-
-                <div class="absolute top-[40%] left-[50%] group cursor-pointer">
-                    <div class="relative flex items-center justify-center w-8 h-8">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-gold opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-4 w-4 bg-brand-gold"></span>
-                    </div>
-                    <div class="absolute left-8 top-0 bg-white text-slate-900 px-3 py-1 rounded shadow-lg text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Chem Lab</div>
-                </div>
-
-                <div class="absolute bottom-[30%] right-[30%] group cursor-pointer">
-                    <div class="relative flex items-center justify-center w-8 h-8">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-gold opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-4 w-4 bg-brand-gold"></span>
-                    </div>
-                    <div class="absolute left-8 top-0 bg-white text-slate-900 px-3 py-1 rounded shadow-lg text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Sports Field</div>
-                </div>
-
-                <div class="absolute top-[15%] right-[20%] group cursor-pointer">
-                    <div class="relative flex items-center justify-center w-8 h-8">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-gold opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-4 w-4 bg-brand-gold"></span>
-                    </div>
-                    <div class="absolute left-8 top-0 bg-white text-slate-900 px-3 py-1 rounded shadow-lg text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Library</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-gray-50 py-24">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">WDA Live Pulse</h2>
-                <p class="text-lg text-slate-600">Stay connected with our latest news, events & stories</p>
-            </div>
-
-            <div class="grid lg:grid-cols-12 gap-12">
-                <div class="lg:col-span-5 space-y-8">
-                    <h3 class="text-2xl font-bold text-slate-900">Social Media Feed</h3>
-                    <div class="grid grid-cols-3 gap-4">
-                        <div class="aspect-square bg-white rounded-xl shadow-sm overflow-hidden"><img src="https://placehold.co/200x200" class="w-full h-full object-cover"></div>
-                        <div class="aspect-square bg-white rounded-xl shadow-sm overflow-hidden"><img src="https://placehold.co/200x200" class="w-full h-full object-cover"></div>
-                        <div class="aspect-square bg-white rounded-xl shadow-sm overflow-hidden"><img src="https://placehold.co/200x200" class="w-full h-full object-cover"></div>
-                        <div class="aspect-square bg-white rounded-xl shadow-sm overflow-hidden"><img src="https://placehold.co/200x200" class="w-full h-full object-cover"></div>
-                        <div class="aspect-square bg-white rounded-xl shadow-sm overflow-hidden"><img src="https://placehold.co/200x200" class="w-full h-full object-cover"></div>
-                        <div class="aspect-square bg-white rounded-xl shadow-sm overflow-hidden"><img src="https://placehold.co/200x200" class="w-full h-full object-cover"></div>
-                        <div class="aspect-square bg-white rounded-xl shadow-sm overflow-hidden"><img src="https://placehold.co/200x200" class="w-full h-full object-cover"></div>
-                        <div class="aspect-square bg-white rounded-xl shadow-sm overflow-hidden"><img src="https://placehold.co/200x200" class="w-full h-full object-cover"></div>
-                        <div class="aspect-square bg-white rounded-xl shadow-sm overflow-hidden"><img src="https://placehold.co/200x200" class="w-full h-full object-cover"></div>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-3 space-y-8">
-                    <h3 class="text-2xl font-bold text-slate-900">Upcoming Events</h3>
-                    <div class="space-y-4">
-                        <div class="bg-white p-4 rounded-xl shadow-sm flex gap-4">
-                            <div class="gold-gradient rounded-lg w-16 h-16 flex flex-col items-center justify-center text-white shrink-0">
-                                <span class="text-xs uppercase font-semibold">Feb</span>
-                                <span class="text-2xl font-bold">20</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-900">Science Fair 2026</h4>
-                                <div class="text-xs text-slate-500 mt-1 flex items-center gap-2">
-                                    <span><i class="far fa-clock"></i> 9:00 AM</span>
-                                    <span><i class="fas fa-map-marker-alt"></i> Auditorium</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-white p-4 rounded-xl shadow-sm flex gap-4">
-                            <div class="gold-gradient rounded-lg w-16 h-16 flex flex-col items-center justify-center text-white shrink-0">
-                                <span class="text-xs uppercase font-semibold">Feb</span>
-                                <span class="text-2xl font-bold">25</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-900">Parent-Teacher Conf</h4>
-                                <div class="text-xs text-slate-500 mt-1 flex items-center gap-2">
-                                    <span><i class="far fa-clock"></i> 2:00 PM</span>
-                                    <span><i class="fas fa-map-marker-alt"></i> Hall</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-white p-4 rounded-xl shadow-sm flex gap-4">
-                            <div class="gold-gradient rounded-lg w-16 h-16 flex flex-col items-center justify-center text-white shrink-0">
-                                <span class="text-xs uppercase font-semibold">Mar</span>
-                                <span class="text-2xl font-bold">01</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-900">Cultural Day</h4>
-                                <div class="text-xs text-slate-500 mt-1 flex items-center gap-2">
-                                    <span><i class="far fa-clock"></i> 10:00 AM</span>
-                                    <span><i class="fas fa-map-marker-alt"></i> Grounds</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="lg:col-span-12 mt-12">
-                     <div class="flex justify-between items-center mb-6">
-                        <h3 class="text-3xl font-bold text-slate-900">Latest from Our Blog</h3>
-                        <div class="flex gap-2">
-                             <button class="w-10 h-10 rounded-full border border-slate-300 flex items-center justify-center hover:bg-gray-100"><i class="fas fa-arrow-left"></i></button>
-                             <button class="w-10 h-10 rounded-full border border-slate-900 flex items-center justify-center hover:bg-slate-900 hover:text-white"><i class="fas fa-arrow-right"></i></button>
-                        </div>
-                     </div>
-                     <div class="bg-white rounded-3xl overflow-hidden shadow-sm flex flex-col md:flex-row">
-                         <div class="md:w-1/2 h-64 md:h-auto relative">
-                             <img src="https://placehold.co/600x400/0f172a/white?text=AI+Education" class="w-full h-full object-cover">
-                             <span class="absolute top-4 left-4 bg-brand-gold text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Innovation</span>
-                         </div>
-                         <div class="md:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
-                             <div class="flex items-center gap-4 text-sm text-slate-500 mb-4">
-                                 <span>Feb 15, 2026</span>
-                                 <span>•</span>
-                                 <span>5 min read</span>
-                             </div>
-                             <h4 class="text-3xl font-bold text-slate-900 mb-4">The Future of Education: AI Integration</h4>
-                             <p class="text-lg text-slate-600 mb-6">How we're integrating AI and technology to enhance learning outcomes and prepare students for tomorrow's challenges.</p>
-                             <a href="#" class="text-brand-gold font-bold flex items-center gap-2 hover:underline">Read Article <i class="fas fa-arrow-right text-xs"></i></a>
-                         </div>
-                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="bg-white lg:flex">
-        <div class="lg:w-1/2 px-6 py-24 bg-[#fefdfb] flex flex-col justify-center">
-            <div class="max-w-lg mx-auto w-full">
-                <h2 class="text-4xl font-bold text-slate-900 mb-4">Send us a Message</h2>
-                <p class="text-lg text-slate-600 mb-12">Fill out the form below and we'll get back to you within 24 hours.</p>
-                
-                <form class="space-y-8">
-                    <div>
-                        <label class="block text-sm font-semibold underline mb-2">Full Name</label>
-                        <input type="text" value="John Doe" class="w-full border-b border-slate-900 py-3 text-lg focus:outline-none focus:border-brand-gold bg-transparent">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-semibold underline mb-2">Email Address</label>
-                        <input type="email" value="john@example.com" class="w-full border-b border-slate-900 py-3 text-lg focus:outline-none focus:border-brand-gold bg-transparent">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-semibold underline mb-2">Message</label>
-                        <textarea class="w-full border-b border-slate-900 py-3 text-lg focus:outline-none focus:border-brand-gold bg-transparent resize-none h-32">Tell us about your inquiry...</textarea>
-                    </div>
-                    <button class="w-full py-4 bg-brand-dark text-white rounded-full font-semibold hover:bg-slate-800 transition">Send Message</button>
-                </form>
-            </div>
-        </div>
-
-        <div class="lg:w-1/2 bg-brand-dark text-white px-6 py-24 relative overflow-hidden">
-            <div class="absolute inset-0 opacity-5 pointer-events-none">
-                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/>
-                        </pattern>
-                    </defs>
-                    <rect width="100%" height="100%" fill="url(#grid)" />
-                </svg>
-            </div>
-
-            <div class="relative max-w-lg mx-auto h-full flex flex-col justify-between">
-                <div>
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Get in Touch</h2>
-                    <p class="text-xl text-gray-300 mb-12">We're here to answer any questions about admissions, programs, or our facilities.</p>
-
-                    <div class="space-y-8 mb-12">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-brand-gold rounded-full flex items-center justify-center shrink-0 text-brand-dark"><i class="fas fa-map-marker-alt"></i></div>
-                            <div>
-                                <h5 class="text-brand-gold font-semibold underline text-sm mb-2">Address</h5>
-                                <p class="text-lg leading-relaxed">123 Excellence Avenue<br>Victoria Island, Lagos<br>Nigeria</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4">
-                             <div class="w-12 h-12 bg-brand-gold rounded-full flex items-center justify-center shrink-0 text-brand-dark"><i class="fas fa-envelope"></i></div>
-                             <div>
-                                <h5 class="text-brand-gold font-semibold underline text-sm mb-1">Email</h5>
-                                <p class="text-lg">admissions@whitediamonds.edu.ng</p>
-                             </div>
-                        </div>
-                        <div class="flex items-center gap-4">
-                             <div class="w-12 h-12 bg-brand-gold rounded-full flex items-center justify-center shrink-0 text-brand-dark"><i class="fas fa-phone"></i></div>
-                             <div>
-                                <h5 class="text-brand-gold font-semibold underline text-sm mb-1">Phone</h5>
-                                <p class="text-lg">+234 801 234 5678</p>
-                             </div>
-                        </div>
-                    </div>
-
-                    <a href="#" class="block w-full py-4 border-2 border-brand-gold text-brand-gold text-center rounded-full font-semibold hover:bg-brand-gold hover:text-brand-dark transition">
-                        <i class="fab fa-whatsapp mr-2"></i> Quick Chat on WhatsApp
-                    </a>
-                </div>
-
-                <div class="mt-16 pt-8 border-t border-gray-700">
-                    <h5 class="text-brand-gold font-semibold underline text-sm mb-4">Follow Us</h5>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-10 h-10 border border-brand-gold rounded-full flex items-center justify-center hover:bg-brand-gold hover:text-brand-dark transition"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="w-10 h-10 border border-brand-gold rounded-full flex items-center justify-center hover:bg-brand-gold hover:text-brand-dark transition"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="w-10 h-10 border border-brand-gold rounded-full flex items-center justify-center hover:bg-brand-gold hover:text-brand-dark transition"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="w-10 h-10 border border-brand-gold rounded-full flex items-center justify-center hover:bg-brand-gold hover:text-brand-dark transition"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
+    <div class="bg-black text-xs py-2 border-b border-gray-800 hidden md:block">
+        <div class="container mx-auto px-6 flex justify-between items-center text-gray-400">
+            <p><i class="fas fa-map-marker-alt mr-2"></i>Gwarzo Rd, Kofar Dukawuya, Kano 700282, Nigeria</p>
+            <div class="flex space-x-4">
+                <span><i class="fas fa-phone mr-1"></i> 08161154985</span>
+                <span><i class="fab fa-whatsapp mr-1"></i> 08161154985</span>
             </div>
         </div>
     </div>
 
-    <footer class="bg-brand-dark text-white border-t border-gray-800 pt-16 pb-8 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-4 gap-12 mb-16">
-                <div>
-                    <h3 class="text-2xl font-bold mb-4">White Diamonds Academy</h3>
-                    <p class="text-gray-400 mb-6 text-sm leading-relaxed">Cultivating excellence and character since 2010. Where academic brilliance meets holistic development in a world-class learning environment.</p>
-                    <div class="flex gap-2">
-                         <span class="border border-brand-gold text-brand-gold px-3 py-1 rounded text-xs">WAEC Accredited</span>
-                         <span class="border border-brand-gold text-brand-gold px-3 py-1 rounded text-xs">NECO Approved</span>
+    <nav class="sticky top-0 z-50 bg-brand-gray/95 backdrop-blur-md border-b border-gray-800 shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold tracking-tighter text-white">
+                DNT<span class="text-brand-accent">.</span>
+            </a>
+
+            <div class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-wide">
+                <a href="#about" class="hover:text-brand-accent transition-colors">About Us</a>
+                <a href="#buy" class="hover:text-brand-accent transition-colors">Buy</a>
+                <a href="#sell" class="hover:text-brand-accent transition-colors">Sell/Swap</a>
+                <a href="#showroom" class="hover:text-brand-accent transition-colors">Showroom</a>
+                <a href="#contact" class="px-5 py-2 bg-white text-black rounded-full hover:bg-brand-accent hover:text-white transition-all">Contact Us</a>
+            </div>
+
+            <button class="md:hidden text-2xl text-white focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header class="relative h-[85vh] flex items-center">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+                 alt="Luxury Car" 
+                 class="w-full h-full object-cover">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div class="reveal active">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6">
+                    EXPLORE <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">QUALITY CARS</span> <br>
+                    YOU CAN TRUST.
+                </h1>
+                <p class="text-lg text-gray-300 mb-8 max-w-lg">
+                    Experience the finest selection of premium vehicles in Kano. Verified quality, seamless trades, and trusted service since 2015.
+                </p>
+                <a href="#showroom" class="inline-block bg-brand-accent text-white px-8 py-4 rounded-full font-bold uppercase tracking-wider hover:bg-red-700 transition-all hover:shadow-[0_0_20px_rgba(217,48,37,0.5)] transform hover:-translate-y-1">
+                    Browse Cars
+                </a>
+            </div>
+            <div class="hidden md:block reveal delay-200">
+               </div>
+        </div>
+    </header>
+
+    <section class="relative z-20 -mt-24 px-6">
+        <div class="container mx-auto bg-brand-gray p-6 rounded-2xl shadow-2xl border border-gray-800 reveal">
+            <form class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                <div class="space-y-1">
+                    <label class="text-xs uppercase text-gray-500 font-bold ml-2">Brand</label>
+                    <select class="w-full bg-black border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-accent">
+                        <option>All Brands</option>
+                        <option>Mercedes-Benz</option>
+                        <option>BMW</option>
+                        <option>Hyundai</option>
+                        <option>Toyota</option>
+                    </select>
+                </div>
+                <div class="space-y-1">
+                    <label class="text-xs uppercase text-gray-500 font-bold ml-2">Model</label>
+                    <select class="w-full bg-black border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-accent">
+                        <option>All Models</option>
+                    </select>
+                </div>
+                <div class="space-y-1">
+                    <label class="text-xs uppercase text-gray-500 font-bold ml-2">Year</label>
+                    <select class="w-full bg-black border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-accent">
+                        <option>Any Year</option>
+                        <option>2024</option>
+                        <option>2023</option>
+                    </select>
+                </div>
+                <div class="space-y-1">
+                    <label class="text-xs uppercase text-gray-500 font-bold ml-2">Condition</label>
+                    <select class="w-full bg-black border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-accent">
+                        <option>Any</option>
+                        <option>New</option>
+                        <option>Foreign Used</option>
+                        <option>Nigerian Used</option>
+                    </select>
+                </div>
+                <div class="flex items-end">
+                    <button type="button" class="w-full bg-white text-black font-bold py-3 rounded-lg hover:bg-gray-200 transition-colors uppercase">
+                        <i class="fas fa-search mr-2"></i> Search
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="py-12 border-b border-gray-800">
+        <div class="container mx-auto px-6 flex flex-wrap justify-center md:justify-around items-center gap-8 opacity-50 hover:opacity-100 transition-opacity duration-500">
+            <i class="fab fa-mercedes text-4xl md:text-6xl text-white"></i>
+            <i class="fab fa-bmw text-4xl md:text-6xl text-white"></i>
+            <span class="text-3xl md:text-5xl font-bold italic font-serif">H</span> <i class="fab fa-toyota text-4xl md:text-6xl text-white"></i>
+            <i class="fab fa-honda text-4xl md:text-6xl text-white"></i>
+        </div>
+    </section>
+
+    <section class="py-20 bg-brand-black">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-12 text-white">Why Choose Us</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-brand-gray p-8 rounded-2xl hover:bg-gray-800 transition-all hover:-translate-y-2 reveal">
+                    <div class="text-brand-accent text-4xl mb-4"><i class="fas fa-car-side"></i></div>
+                    <h3 class="text-2xl font-extrabold text-white mb-2">1000+</h3>
+                    <p class="text-gray-400 text-sm">Cars Sold Successfully</p>
+                </div>
+                <div class="bg-brand-gray p-8 rounded-2xl hover:bg-gray-800 transition-all hover:-translate-y-2 reveal delay-100">
+                    <div class="text-brand-accent text-4xl mb-4"><i class="fas fa-file-contract"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-2">100% Verified</h3>
+                    <p class="text-gray-400 text-sm">Customs Duty Paid</p>
+                </div>
+                <div class="bg-brand-gray p-8 rounded-2xl hover:bg-gray-800 transition-all hover:-translate-y-2 reveal delay-200">
+                    <div class="text-brand-accent text-4xl mb-4"><i class="fas fa-exchange-alt"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-2">Seamless</h3>
+                    <p class="text-gray-400 text-sm">Trade-In & Swaps</p>
+                </div>
+                <div class="bg-brand-gray p-8 rounded-2xl hover:bg-gray-800 transition-all hover:-translate-y-2 reveal delay-300">
+                    <div class="text-brand-accent text-4xl mb-4"><i class="fas fa-handshake"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-2">Trusted</h3>
+                    <p class="text-gray-400 text-sm">Kano Dealership</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white text-black">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="w-full md:w-1/2 reveal">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Office Professional" class="w-full h-auto object-cover">
+                        <div class="absolute bottom-0 left-0 bg-brand-accent text-white px-6 py-4 rounded-tr-2xl">
+                            <p class="font-bold text-xl">Est. 2015</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 reveal delay-100">
+                    <h2 class="text-4xl font-extrabold mb-6 leading-tight">Driving Kano Forward <br> Since 2015.</h2>
+                    <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                    </p>
+                    <button class="bg-black text-white px-8 py-3 rounded-lg font-bold hover:bg-gray-800 transition-all shadow-lg">
+                        Read Our Story
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-brand-gray">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white">The Team</h2>
+                <p class="text-gray-400 mt-2">Meet the experts behind DNT Autos</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="w-full lg:w-1/3 reveal">
+                    <div class="bg-brand-black p-2 rounded-3xl shadow-xl h-full relative group overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="CEO" class="w-full h-[400px] object-cover rounded-2xl filter grayscale group-hover:grayscale-0 transition-all duration-500">
+                        <div class="absolute bottom-6 left-6">
+                            <h3 class="text-3xl font-bold text-white">CEO</h3>
+                            <p class="text-brand-accent font-medium">Founder</p>
+                        </div>
                     </div>
                 </div>
 
-                <div>
-                    <h4 class="text-brand-gold font-semibold underline mb-6">Quick Links</h4>
-                    <ul class="space-y-3 text-sm text-gray-300">
-                        <li><a href="#" class="hover:text-white">About Us</a></li>
-                        <li><a href="#" class="hover:text-white">Admissions</a></li>
-                        <li><a href="#" class="hover:text-white">Programs</a></li>
-                        <li><a href="#" class="hover:text-white">Facilities</a></li>
-                        <li><a href="#" class="hover:text-white">Virtual Tour</a></li>
-                        <li><a href="#" class="hover:text-white">News & Events</a></li>
-                    </ul>
-                </div>
+                <div class="w-full lg:w-2/3 grid grid-cols-2 md:grid-cols-3 gap-8 reveal delay-200">
+                    <div class="text-center group">
+                        <div class="w-24 h-24 mx-auto rounded-full overflow-hidden border-2 border-transparent group-hover:border-brand-accent transition-all mb-3">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Member" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="text-white font-bold text-sm">Aliyu Musa</h4>
+                        <p class="text-xs text-gray-500">Sales Manager</p>
+                    </div>
+                    
+                    <div class="text-center group">
+                        <div class="w-24 h-24 mx-auto rounded-full overflow-hidden border-2 border-transparent group-hover:border-brand-accent transition-all mb-3">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Member" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="text-white font-bold text-sm">Fatima Bello</h4>
+                        <p class="text-xs text-gray-500">Finance Lead</p>
+                    </div>
 
-                <div>
-                    <h4 class="text-brand-gold font-semibold underline mb-6">Our Programs</h4>
-                    <ul class="space-y-3 text-sm text-gray-300">
-                        <li><a href="#" class="hover:text-white">Creche</a></li>
-                        <li><a href="#" class="hover:text-white">Kindergarten</a></li>
-                        <li><a href="#" class="hover:text-white">Elementary</a></li>
-                        <li><a href="#" class="hover:text-white">High School</a></li>
-                        <li><a href="#" class="hover:text-white">Day Program</a></li>
-                        <li><a href="#" class="hover:text-white">Boarding</a></li>
-                    </ul>
-                </div>
+                    <div class="text-center group">
+                        <div class="w-24 h-24 mx-auto rounded-full overflow-hidden border-2 border-transparent group-hover:border-brand-accent transition-all mb-3">
+                            <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Member" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="text-white font-bold text-sm">Usman Sani</h4>
+                        <p class="text-xs text-gray-500">Logistics</p>
+                    </div>
 
-                <div>
-                     <h4 class="text-brand-gold font-semibold underline mb-6">Get in Touch</h4>
-                     <div class="space-y-4 text-sm text-gray-300">
-                         <div class="flex gap-3">
-                             <i class="fas fa-map-marker-alt mt-1"></i>
-                             <p>123 Excellence Avenue<br>Victoria Island, Lagos<br>Nigeria</p>
-                         </div>
-                         <div class="flex gap-3">
-                             <i class="fas fa-phone mt-1"></i>
-                             <p>+234 801 234 5678</p>
-                         </div>
-                         <div class="flex gap-3">
-                             <i class="fas fa-envelope mt-1"></i>
-                             <p>admissions@whitediamonds.edu.ng</p>
-                         </div>
-                     </div>
+                    <div class="text-center group">
+                        <div class="w-24 h-24 mx-auto rounded-full overflow-hidden border-2 border-transparent group-hover:border-brand-accent transition-all mb-3">
+                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Member" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="text-white font-bold text-sm">Zainab Ibrahim</h4>
+                        <p class="text-xs text-gray-500">Customer Support</p>
+                    </div>
+
+                    <div class="text-center group">
+                        <div class="w-24 h-24 mx-auto rounded-full overflow-hidden border-2 border-transparent group-hover:border-brand-accent transition-all mb-3">
+                            <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Member" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="text-white font-bold text-sm">Ibrahim Yusuf</h4>
+                        <p class="text-xs text-gray-500">Mechanic</p>
+                    </div>
+
+                    <div class="text-center group">
+                        <div class="w-24 h-24 mx-auto rounded-full overflow-hidden border-2 border-transparent group-hover:border-brand-accent transition-all mb-3">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Member" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="text-white font-bold text-sm">Aisha Mohammed</h4>
+                        <p class="text-xs text-gray-500">Marketing</p>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-                <p>&copy; 2026 White Diamonds Academy. All rights reserved.</p>
-                <div class="flex gap-6">
-                    <a href="#" class="hover:text-white">Privacy Policy</a>
-                    <a href="#" class="hover:text-white">Terms of Use</a>
+    <section id="contact" class="py-20 bg-white text-black relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12">Contact Us</h2>
+            <div class="flex flex-col md:flex-row gap-12 bg-gray-100 rounded-3xl p-8 md:p-12 shadow-inner">
+                
+                <div class="w-full md:w-1/3 space-y-8">
+                    <div>
+                        <h3 class="text-sm font-bold uppercase text-gray-500 mb-2">Email Us</h3>
+                        <p class="text-xl font-bold">dntautos@gmail.com</p>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-bold uppercase text-gray-500 mb-2">Visit Us</h3>
+                        <p class="text-lg">Gwarzo Rd, Kofar Dukawuya,<br>Kano 700282, Kano, Nigeria</p>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-bold uppercase text-gray-500 mb-2">Call Us</h3>
+                        <p class="text-lg font-mono">08161154985</p>
+                        <p class="text-lg font-mono">08161154985</p>
+                        <p class="text-lg font-mono">08161154985</p>
+                    </div>
                 </div>
+
+                <div class="w-full md:w-2/3">
+                    <form class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <input type="text" placeholder="Name" class="w-full bg-white border border-gray-300 p-4 rounded-lg focus:outline-none focus:border-brand-accent transition-colors">
+                            <input type="tel" placeholder="Phone Number" class="w-full bg-white border border-gray-300 p-4 rounded-lg focus:outline-none focus:border-brand-accent transition-colors">
+                        </div>
+                        <textarea placeholder="Message..." rows="4" class="w-full bg-white border border-gray-300 p-4 rounded-lg focus:outline-none focus:border-brand-accent transition-colors"></textarea>
+                        <button type="button" class="bg-black text-white px-8 py-4 rounded-lg font-bold w-full md:w-auto hover:bg-brand-accent transition-colors">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-black text-white pt-16 pb-8 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-10">
+                <div class="mb-6 md:mb-0">
+                     <div class="flex space-x-6">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-accent transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-accent transition-colors"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-accent transition-colors"><i class="fab fa-snapchat-ghost"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-accent transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="flex space-x-6 text-xs font-bold uppercase tracking-widest text-gray-500">
+                    <a href="#" class="hover:text-white transition-colors">Home</a>
+                    <a href="#" class="hover:text-white transition-colors">Buy</a>
+                    <a href="#" class="hover:text-white transition-colors">Sell/Swap</a>
+                    <a href="#" class="hover:text-white transition-colors">Showroom</a>
+                </div>
+            </div>
+            
+            <div class="text-center border-t border-gray-900 pt-8 text-gray-600 text-sm">
+                &copy; 2026 DNT Autos. All Rights Reserved. Designed with precision.
             </div>
         </div>
     </footer>
 
+    <script>
+        // Scroll Animation Observer
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 150;
+
+                reveals.forEach((reveal) => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', revealOnScroll);
+            // Trigger once on load
+            revealOnScroll();
+        });
+    </script>
 </body>
 </html>
